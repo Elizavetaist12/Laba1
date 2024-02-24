@@ -3,25 +3,4 @@
 Вариант 20.
 Нечетные двоичные числа, не превышающие 204810, в которых встречается ровно одна серия из двух подряд идущих единиц. Выводит на экран цифры числа, исключая единицы. Отдельно выводится прописью номер позиции, с которой начинается эта серия.
 '''
-with open ("C://Users//ЛизаМиш//PycharmProjects//test1//test1.txt", 'r') as f:
-    line = f.readline()
-    numbers = line.split()
-    print("Входные данные из файла:", numbers)
-    for i in range(len(numbers)):
-        a = numbers[i]
-        if not a.isdigit():
-            continue
-        if int(a) % 2 == 0 or int(a) >= 2048:
-            continue
-        print("Удовлетворяющие условию числа:", a)
-        b = bin(int(a))[2::]
-        print("Двоичная система исчисления:", b)
 
-        count = 0
-
-        while '11' in b:
-            count += 1
-            b = b.replace('11', '')
-            print("Цифры чисел, исключая единицы:", b)
-            if count == 1:
-                print("Номер позиции:", i)
